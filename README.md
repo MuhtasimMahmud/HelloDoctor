@@ -4,32 +4,32 @@
 Project Features : 
 
 1. Users management :
-       - Patient
-       - Doctor (Admin)
-       - Doctor’s Assistant (Admin)
+     - Patient
+     - Doctor (Admin)
+     - Doctor’s Assistant (Admin)
 
 
 2. Book an appointment :
-            - Patients can book an appointment 
+      - Patients can book an appointment 
 
 
 3. Patient’s prescription and profile : 
-           - Patient can update own profile and can only view the prescription
-             of him which is written by the doctor. 
+      - Patient can update own profile and can only view the prescription
+        of him which is written by the doctor. 
 
 4. Doctor’s view : 
-   	   - Doctor is the admin. Doctor can view the patient list and
-            After consultation, the doctor can remove the patient from the serial.
+      - Doctor is the admin. Doctor can view the patient list and
+        After consultation, the doctor can remove the patient from the serial.
 
 
 5. Doctor’s  access:
-           - Doctor can update all patients prescription and save in the
-             patient profile. Patients can see the updated profile.
+      - Doctor can update all patients prescription and save in the
+        patient profile. Patients can see the updated profile.
  
 6. Doctor’s Assistant’s access :
-            - Assistant can publish any important announcement to the patient. This                
-              announcement will be shown in the appointment booking page while a   
-              the patient will go to that page.
+     - Assistant can publish any important announcement to the patient. This                
+       announcement will be shown in the appointment booking page while a   
+       the patient will go to that page.
 
 Screenshots :
 
