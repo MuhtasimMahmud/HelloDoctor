@@ -1,0 +1,17 @@
+body{
+    /*background: #e2e2e2 !important;*/
+    background: #c4cfcd !important;
+}
+
+.my-card{
+    padding-top: 70px;
+    padding-left: 20px;
+    padding-bottom: 50px;
+    padding-right: 20px;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+.my-card .heading{
+    padding-bottom: 50px;
+}

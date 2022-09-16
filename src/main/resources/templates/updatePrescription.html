@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+      <head>
+        <meta charset="UTF-8">
+        <title>Patient's prescription</title>
+
+        <!--Bootstrap and CSS-->
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <link rel="stylesheet" th:href="@{/css/base.css}">
+
+      </head>
+
+      <body>
+          <section>
+
+      <div class="col-md-8 offset-md-2" >
+
+        <div class="my-card mt-5">
+
+          <div th:if="${session.message}" th:classappend="${session.message.type}" class="alert" role="alert">
+            <p class="text-center" th:text="${session.message.content}"> </p>
+            <th:block th:text="${#session.removeAttribute('message')}"> </th:block>
+          </div>
+
+          <h1 class="text-center heading"> <span th:text="${user.name}"></span>'s Profile  </h1>
+
+          <form action="" th:action="@{/adminUpdatePrescription}" method="post" th:object="${user}">
+
+              <!-- Name field-->
+              <div class="form-group">
+                <label for="name_field">Your Name</label>
+                <input name="name" type="text" readonly ="readonly" class="form-control" id="name_field" th:value="${user.name}">
+              </div>
+
+              <!-- email field-->
+              <div class="form-group">
+                <label for="email_field">Your email</label>
+                <input name="email" type="email" class="form-control" readonly="readonly" id="email_field" th:value="${user.email}">
+              </div>
+
+              <div class="form-row">
+
+                <!-- age field-->
+                <div class="form-group col-md-6">
+                  <label for="age_field">Age</label>
+                  <input name="age" type="text" class="form-control" id="age_field" th:value="${user.age}">
+                </div>
+
+
+                <!--address field-->
+                <div class="form-group col-md-6">
+                  <label for="address_field">Address</label>
+                  <input name="address" type="text" class="form-control" readonly="readonly" id="address_field" th:value="${user.address}">
+                </div>
+
+
+                <!--prescription field-->
+                <div class="form-group col-md-12">
+                  <label for="prescription_field">Prescription</label>
+                  <textarea name="prescription" id="prescription_field" th:field="${user.prescription}" rows="5" class="form-control"> </textarea>
+                </div>
+
+              </div>
+
+              <div class="container text-center">
+                <button type="submit" class="btn btn-success mt-4">
+                  Update
+                </button>
+              </div>
+
+          </form>
+
+        </div>
+      </div>
+
+    </section>
+      </body>
+</html>

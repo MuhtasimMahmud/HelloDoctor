@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+    <head>
+        <meta charset="UTF-8">
+        <title> Book Appointment</title>
+    </head>
+    <body>
+        <section>
+
+            <div class="col-md-8 offset-md-2" >
+                <div class="my-card mt-5">
+
+                    <div th:if="${session.message}" th:classappend="${session.message.type}" class="alert" role="alert">
+                        <p class="text-center" th:text="${session.message.content}"> </p>
+                        <th:block th:text="${#session.removeAttribute('message')}"> </th:block>
+                    </div>
+
+                    <h1 class="text-center heading"> Book Your appointment. </h1>
+                    <h6 class="text-center"> Announcement : <span th:text="${announcement.announcement}"></span> </h6>
+
+                    <form action="" th:action="@{/booked_appointment}" method="post" th:object="${user}">
+
+                        <!-- Name field-->
+                        <div class="form-group">
+                            <label for="name_field">Your Name</label>
+                            <input name="name" type="text" class="form-control" readonly="readonly" id="name_field" th:value="${user.name}">
+                        </div>
+
+                        <!-- email field-->
+                        <div class="form-group">
+                            <label for="email_field">Your email</label>
+                            <input name="email" type="email" class="form-control" readonly="readonly" id="email_field" th:value="${user.email}">
+                        </div>
+
+
+                        <!-- appointment date-->
+
+                        <div class="form-group">
+                            <label for="date_field">Booking Date</label>
+                            <input name="appointment_date" type="date" class="form-control" id="date_field" placeholder="yyyy-mm-dd">
+                        </div>
+
+                        <div class="text-center">
+                            <button class="btn btn-success">
+                                Book !
+                            </button>
+                        </div>
+
+
+
+                    </form>
+
+                </div>
+            </div>
+
+        </section>
+    </body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="admin/base::layout(~{::section})">
+    <head>
+        <meta charset="UTF-8">
+        <title th:text="${title}"></title>
+
+    </head>
+<body>
+    <section>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-8 offset-md-2" >
+
+                <div class="my-card mt-5">
+
+                    <!-- Alert message-->
+
+                    <div th:if="${session.message}" th:classappend="${session.message.type}" class="alert" role="alert">
+                        <p class="text-center" th:text="${session.message.content}"> </p>
+                        <th:block th:text="${#session.removeAttribute('message')}"> </th:block>
+                    </div>
+
+                    <h1 class="text-center heading"> Admin Registration </h1>
+
+                    <form action="" th:action="@{/do_register}" method="post" th:object="${user}">
+
+                        <!-- Name field-->
+                        <div class="form-group">
+                            <label for="name_field">Your Name</label>
+                            <input name="name" type="text" class="form-control" id="name_field" placeholder="Enter your name" th:value="${user.name}">
+                        </div>
+
+                        <!-- email field-->
+                        <div class="form-group">
+                            <label for="email_field">Your email</label>
+                            <input name="email" type="email" class="form-control" id="email_field" placeholder="Enter your email" th:value="${user.email}">
+                        </div>
+
+                        <div class="form-row">
+
+                            <!-- Role field-->
+                            <div class="form-group col-md-6">
+                                <label for="age_field">Select Role</label>
+                                <input name="role" type="text" class="form-control" id="role_field" placeholder="DOCTOR / ASSISTANT" th:value="${user.role}">
+                            </div>
+
+                            <!-- password field-->
+                            <div class="form-group col-md-6">
+                                <label for="password_field">Password</label>
+                                <input name="password" type="password" class="form-control" id="password_field" placeholder="Password">
+                            </div>
+
+                        </div>
+
+
+                        <!--Submit and Reset field-->
+                        <div class="container text-center">
+                            <button type="submit" class="btn btn-success mt-4">
+                                Submit
+                            </button>
+
+                            <button type="reset" class="btn btn-warning mt-4">
+                                Reset
+                            </button>
+                        </div>
+
+                        <P class="text-center mt-3"> Already Have an account? <a th:href="@{login}"> Login </a></P>
+
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+</section>
+</body>
+</html>
