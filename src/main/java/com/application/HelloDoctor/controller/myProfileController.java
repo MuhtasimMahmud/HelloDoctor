@@ -59,7 +59,6 @@ public class myProfileController {
         }catch (Exception e){
             e.printStackTrace();
         }
-
         try {
             if(patient != null){
                 patient.setName(updatedUser.getName());
@@ -68,11 +67,8 @@ public class myProfileController {
         }catch (Exception e){
             e.printStackTrace();
         }
-
         return "normal/myProfile";
     }
-
-
 
 
 }

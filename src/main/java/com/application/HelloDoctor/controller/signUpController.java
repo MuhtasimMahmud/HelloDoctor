@@ -84,7 +84,7 @@ public class signUpController {
             user.setPassword(passwordEncoder.encode(user.getPassword()));
 
 
-            User Uresult = this.userRepository.save(user);
+            User UserResult = this.userRepository.save(user);
 
 
             model.addAttribute("user", new User());
@@ -101,10 +101,6 @@ public class signUpController {
             return return_page;
         }
 
-
-
     }
-
-
 
 }
