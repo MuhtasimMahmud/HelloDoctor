@@ -48,9 +48,9 @@ public class assistantController {
 
 
     @RequestMapping("/assistantAnnouncement")
-    public String assistantAnnouncementUpdate(@ModelAttribute("assistant") Assistant updatedAnnouncement, HttpSession session){
+    public String assistantAnnouncementUpdate(@ModelAttribute("assistant") Assistant updatedAnnouncement, HttpSession session, Principal principal){
 
-        Assistant existingAssistant = assistantRepository.findByEmail("assistant@gmail.com");
+        Assistant existingAssistant = assistantRepository.findByEmail(principal.getName());
         existingAssistant.setAnnouncement(updatedAnnouncement.getAnnouncement());
 
         assistantRepository.save(existingAssistant);
