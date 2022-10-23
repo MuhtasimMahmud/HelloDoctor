@@ -24,15 +24,14 @@ public class assistantController {
     @Autowired
     AnnouncementRepository announcementRepository;
 
+
+
     @RequestMapping("assistant")
     public String assistant(Model model, Principal principal){
 
-        // eije eikhane manually use kortesi ekta certain assistant ke. so eikhane database theke current logged in assistant ke niye then use korte hobe
-
-//        String userName = principal.getName();
-        Assistant assistant = assistantRepository.findByEmail("assistant@gmail.com");
+        String userName = principal.getName();
+        Assistant assistant = assistantRepository.findByEmail(userName);
         model.addAttribute("assistant", assistant);
-
 
         Announcement announcementResult = announcementRepository.findById(1);
         try{
@@ -47,6 +46,7 @@ public class assistantController {
         return "admin/assistant";
     }
 
+
     @RequestMapping("/assistantAnnouncement")
     public String assistantAnnouncementUpdate(@ModelAttribute("assistant") Assistant updatedAnnouncement, HttpSession session){
 
@@ -54,7 +54,6 @@ public class assistantController {
         existingAssistant.setAnnouncement(updatedAnnouncement.getAnnouncement());
 
         assistantRepository.save(existingAssistant);
-
 
         Announcement announcementResult = announcementRepository.findById(1);
         try{
@@ -68,7 +67,6 @@ public class assistantController {
         }catch (Exception e){
             e.printStackTrace();
         }
-
 
         return "admin/assistant";
     }

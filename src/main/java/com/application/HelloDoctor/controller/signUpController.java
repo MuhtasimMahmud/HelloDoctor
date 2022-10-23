@@ -63,6 +63,9 @@ public class signUpController {
 
         try{
 
+            // Doctor signUp ta just ekbarer jonno. first bar ekta doctor ke signUp koranor pore ar kuno doctor ke
+            // signUp korabona cz eta ekjon doctor user korar jonno.
+
             if(user.getRole().equals("##DOCTOR")){
                 user.setRole("ROLE_DOCTOR");
                 doctor = new Doctor(user.getId(), user.getEmail(), user.getName());

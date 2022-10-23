@@ -1,6 +1,7 @@
 package com.application.HelloDoctor.config;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -16,6 +17,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @Configuration
 @EnableWebSecurity
 public class MyConfig extends WebSecurityConfigurerAdapter {
+
+    @Autowired
+    CustomLoginSuccessHandler successHandler;
 
     @Bean
     public UserDetailsService getUserDetailsService(){
@@ -49,11 +53,13 @@ public class MyConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http)throws Exception{
         http.authorizeHttpRequests().antMatchers("/user/**").hasRole("USER")
-                .antMatchers("/**").permitAll().and().formLogin()
+                .antMatchers("/admin").hasRole("DOCTOR")
+                .antMatchers("/assistant").hasRole("ASSISTANT")
+                .antMatchers("/home").permitAll().and().formLogin()
+                .loginPage("/signin")
                 .loginProcessingUrl("/dologin")
-                .defaultSuccessUrl("/user/user_dashboard")
+                .successHandler(successHandler)
                 .and().csrf().disable();
-
 
     }
 }

@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class loginController {
 
-    @RequestMapping("/login")
+    @RequestMapping("/signin")
     public String login(Model model){
         model.addAttribute("title", "Login");
-        return "/signin";
+        return "/login";
     }
 }
