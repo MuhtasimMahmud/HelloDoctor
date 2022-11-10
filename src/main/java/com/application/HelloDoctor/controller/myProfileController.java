@@ -67,7 +67,8 @@ public class myProfileController {
         }catch (Exception e){
             e.printStackTrace();
         }
-        return "redirect:/normal/myProfile";
+        return "normal/myProfile";
     }
+
 
 }
