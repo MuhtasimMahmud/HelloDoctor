@@ -70,5 +70,4 @@ public class myProfileController {
         return "normal/myProfile";
     }
 
-
 }
