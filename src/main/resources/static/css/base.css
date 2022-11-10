@@ -1,6 +1,9 @@
 body{
     /*background: #e2e2e2 !important;*/
     background: #c4cfcd !important;
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
 }
 
 .my-card{
@@ -20,19 +23,11 @@ body{
 html {
     height: 100%;
 }
-body {
-    margin:0;
-    padding:0;
-    font-family: sans-serif;
-    background: linear-gradient(#141e30, #243b55);
-}
-
 
 /*login-newVersion*/
 
-
 body{
-    background: #d6f1e8 !important;
+    background: #c8d0cf !important;
 }
 
 div.well{
