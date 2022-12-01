@@ -1,5 +1,7 @@
 # HelloDoctor
 
+This is a web applicaiton. I've used java programming language and used spring boot framework. For database i've used mySql. For frontend i've used HTML5, CSS3, Bootstrap4.
+
 
 Project Features : 
 
