@@ -25,7 +25,6 @@ public class assistantController {
     AnnouncementRepository announcementRepository;
 
 
-
     @RequestMapping("assistant")
     public String assistant(Model model, Principal principal){
 
