@@ -49,7 +49,7 @@ public class adminController {
         }catch (Exception e){
             e.printStackTrace();
         }
-        return "admin/admin";
+        return "redirect:/admin";
     }
 
     @RequestMapping("/adminPrescription/{email}")
@@ -79,7 +79,7 @@ public class adminController {
             e.printStackTrace();
         }
 
-        return "updatePrescription";
+        return "redirect:/adminPrescription/"+updatedUser.getEmail();
     }
 
 
