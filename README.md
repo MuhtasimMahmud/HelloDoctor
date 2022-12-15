@@ -52,5 +52,6 @@ Screenshots :
 ![Admin Registration](https://user-images.githubusercontent.com/58343930/190731890-c5b034b6-5095-4117-b190-aa3083a5d101.png)
 ![Doctor's panel](https://user-images.githubusercontent.com/58343930/190731916-b2562b3d-729d-4346-bf21-8b97e0096a09.png)
 ![Patient's profile from doctors panel](https://user-images.githubusercontent.com/58343930/190731939-564fd03f-1c88-4f22-813c-2f6aa682d141.png)
-![Assistant panel](https://user-images.githubusercontent.com/58343930/190732065-c7c2fd51-4830-460e-a4eb-18ab6c20f3cc.png)
+![Assistant's panel](https://user-images.githubusercontent.com/58343930/207942893-ebb3286c-1e7b-4dac-9178-3c7461c1222e.png)
+
 
